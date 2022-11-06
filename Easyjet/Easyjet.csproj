@@ -24,6 +24,7 @@
     <None Remove="Utilities\" />
     <None Remove="Test\Testcase\" />
     <None Remove="Test\Test data\" />
+    <None Remove="Helper\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="POM\" />
@@ -31,5 +32,6 @@
     <Folder Include="Utilities\" />
     <Folder Include="Test\Testcase\" />
     <Folder Include="Test\Test data\" />
+    <Folder Include="Helper\" />
   </ItemGroup>
 </Project>
