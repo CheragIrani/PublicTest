@@ -19,5 +19,17 @@
     <None Remove="Selenium.WebDriver" />
     <None Remove="Selenium.Support" />
     <None Remove="Selenium.WebDriver.ChromeDriver" />
+    <None Remove="POM\" />
+    <None Remove="Test\" />
+    <None Remove="Utilities\" />
+    <None Remove="Test\Testcase\" />
+    <None Remove="Test\Test data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="POM\" />
+    <Folder Include="Test\" />
+    <Folder Include="Utilities\" />
+    <Folder Include="Test\Testcase\" />
+    <Folder Include="Test\Test data\" />
   </ItemGroup>
 </Project>
