@@ -16,7 +16,7 @@ namespace Easyjet.Helper
             ((IJavaScriptExecutor)driver).ExecuteScript(scrollElementIntoMiddle, driver.FindElement(element));
         }
 
-        public static bool IsElementDisplayed(IWebDriver driver, By element)
+        public static bool IsElementDisplayed(this IWebDriver driver, By element)
         {
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             try
