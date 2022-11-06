@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using Easyjet.Helper;
+using Easyjet.Utilities;
 using NUnit.Framework;
 using OpenQA.Selenium;
 
@@ -16,9 +17,9 @@ namespace Easyjet.POM
 
         By TeamOrCompetitionInput => By.CssSelector("input[name = 'search']");
 
-        By PremierLeagueOption => By.LinkText("/sport/football/premier-league/scores-fixtures");
+        By PremierLeagueOption => By.CssSelector("a[href = '/sport/football/premier-league/scores-fixtures']");
 
-        By TableLink => By.LinkText("/sport/football/premier-league/table");
+        By TableLink => By.CssSelector("a[href = '/sport/football/premier-league/table']");
 
         public ScoresFixtures(IWebDriver driver)
         {
@@ -48,7 +49,15 @@ namespace Easyjet.POM
         public By GetFixtureMonthElement(DateTime date)
         {
             var dateFormat = date.ToString("yyyy-MM");
-            return By.LinkText($"/sport/football/premier-league/scores-fixtures/{dateFormat}?filter=fixtures");
+            if(dateFormat == DateTime.Now.ToString("yyyy-MM"))
+            {
+                return By.CssSelector($"a[href = '/sport/football/premier-league/scores-fixtures/{dateFormat}?filter=fixtures']");
+            }
+            else
+            {
+                return By.CssSelector($"a[href = '/sport/football/premier-league/scores-fixtures/{dateFormat}']");
+            }
+            
         }
 
         public List<Fixture> GetFixturesFotNext3Months()

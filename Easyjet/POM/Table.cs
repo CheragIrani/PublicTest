@@ -10,7 +10,7 @@ namespace Easyjet.POM
     {
         IWebDriver _driver;
 
-        By PremierLeagueTableHeader => By.XPath("//h1/span[contains(text() , 'Premier League')]");
+        By PremierLeagueTableHeader => By.XPath("//h1/span[contains(text(), 'Premier League')]");
 
         public Table(IWebDriver driver)
         {
@@ -27,7 +27,7 @@ namespace Easyjet.POM
 
             for(int i = numberOfTeamsInTable.Count/2 + 1; i <= numberOfTeamsInTable.Count; i++)
             {
-                teamsInBottomHalf.Add(_driver.FindElement(By.CssSelector($"table tbody>tr[{i}] a>span")).GetAttribute("data-900"));
+                teamsInBottomHalf.Add(_driver.FindElement(By.CssSelector($"table tbody>tr:nth-child({i}) a>span")).GetAttribute("data-900"));
             }
 
             return teamsInBottomHalf;

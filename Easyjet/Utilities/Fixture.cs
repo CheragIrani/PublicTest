@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Easyjet.POM
+namespace Easyjet.Utilities
 {
     public class Fixture
     {

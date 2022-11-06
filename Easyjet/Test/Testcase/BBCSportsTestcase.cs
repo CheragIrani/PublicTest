@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Easyjet.POM;
 using Easyjet.Test.Testdata;
 using Easyjet.Utilities;
@@ -18,17 +19,28 @@ namespace Easyjet.Test.Testcase
             var scoresFixtures = football.ClickScoresAndFixtures();
             scoresFixtures.SearchLeague(testData.LeagueName).SelectPremierLeagueOption();
             var next5FixturesForTottenham = scoresFixtures.GetFixturesForTeam(testData.FootballTeamName, testData.NumberOfFixtures);
-            foreach(var tottenhamFixture in next5FixturesForTottenham)
+            
+            for(int i = 0; i < next5FixturesForTottenham.Count; i++)
             {
-                Console.WriteLine(tottenhamFixture.HomeTeam + "vs " + tottenhamFixture.AwayTeam);
+                Assert.AreEqual(next5FixturesForTottenham[i].HomeTeam, testData.Fixtures[i].HomeTeam);
+                Assert.AreEqual(next5FixturesForTottenham[i].AwayTeam, testData.Fixtures[i].AwayTeam);
             }
 
             var premierLeagueTable = scoresFixtures.ClickTableLink();
             var teamsInBottomHalfOfpremierLeague = premierLeagueTable.GetListOfTeamsInBottomHalf();
-            foreach(var team in teamsInBottomHalfOfpremierLeague)
+
+            List<Fixture> fixturesWithTeamsInBottomHalf = new List<Fixture>();
+            foreach(var fixture in next5FixturesForTottenham)
             {
-                Console.WriteLine(team);
+                foreach(var lowerHalfTeam in teamsInBottomHalfOfpremierLeague)
+                {
+                    if(fixture.HomeTeam == lowerHalfTeam || fixture.AwayTeam == lowerHalfTeam)
+                    {
+                        fixturesWithTeamsInBottomHalf.Add(fixture);
+                    }
+                }
             }
+            Assert.AreEqual(fixturesWithTeamsInBottomHalf.Count, 3);
         }
     }
 }

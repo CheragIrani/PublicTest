@@ -7,9 +7,9 @@ namespace Easyjet.POM
 {
     public class Football
     {
-        By ScoresAndFixturesLink => By.LinkText("/sport/football/scores-fixtures");
-        By TablesLink => By.LinkText("/sport/football/tables");
-        By GossipLink => By.LinkText("/sport/football/gossip");
+        By ScoresAndFixturesLink => By.CssSelector("a[data-stat-title = 'Scores & Fixtures']");
+        By TablesLink => By.CssSelector("a[data-stat-title = 'Tables']");
+        By GossipLink => By.CssSelector("a[data-stat-title = 'Gossip']");
 
         IWebDriver _driver;
 
