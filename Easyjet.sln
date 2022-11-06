@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.810.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Easyjet", "Easyjet\Easyjet.csproj", "{8CDC96F2-F527-41D7-8118-A17F0F5624CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CDC96F2-F527-41D7-8118-A17F0F5624CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CDC96F2-F527-41D7-8118-A17F0F5624CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CDC96F2-F527-41D7-8118-A17F0F5624CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CDC96F2-F527-41D7-8118-A17F0F5624CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {002545C4-E7EF-4B8E-A2CF-34DA7D464B03}
+	EndGlobalSection
+EndGlobal
