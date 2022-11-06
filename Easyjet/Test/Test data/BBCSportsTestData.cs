@@ -9,7 +9,9 @@ namespace Easyjet.Test.Testdata
         {
             new TestCaseDataModel
             {
-                FootballTeamName = "Tottenham Hotspur"
+                FootballTeamName = "Tottenham Hotspur",
+                LeagueName = "Premier League",
+                NumberOfFixtures = 5
             }
         }; 
     }

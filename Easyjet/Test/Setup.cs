@@ -15,6 +15,7 @@ namespace Easyjet.Test
             _driver = new ChromeDriver(".");
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             _driver.Manage().Window.Maximize();
+            _driver.Navigate().GoToUrl("https://www.bbc.co.uk/sport");
         }
     }
 }

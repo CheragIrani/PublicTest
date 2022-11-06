@@ -18,9 +18,10 @@ namespace Easyjet.POM
             Assert.IsTrue(driver.IsElementDisplayed(HomeLink) && driver.IsElementDisplayed(FootballLink) && driver.IsElementDisplayed(CricketLink));
         }
 
-        public void ClickFootballLink()
+        public Football ClickFootballLink()
         {
             _driver.Click(FootballLink);
+            return new Football(_driver);
         }
     }
 }

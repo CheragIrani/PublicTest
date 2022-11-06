@@ -18,5 +18,12 @@ namespace Easyjet.POM
             _driver = driver;
             Assert.IsTrue(driver.IsElementDisplayed(ScoresAndFixturesLink) && driver.IsElementDisplayed(TablesLink) && driver.IsElementDisplayed(GossipLink));
         }
+
+        public ScoresFixtures ClickScoresAndFixtures()
+        {
+            _driver.Click(ScoresAndFixturesLink);
+
+            return new ScoresFixtures(_driver);
+        }
     }
 }
