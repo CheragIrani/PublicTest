@@ -22,8 +22,7 @@ namespace Easyjet.Test.Testcase
             
             for(int i = 0; i < next5FixturesForTottenham.Count; i++)
             {
-                Assert.AreEqual(next5FixturesForTottenham[i].HomeTeam, testData.Fixtures[i].HomeTeam);
-                Assert.AreEqual(next5FixturesForTottenham[i].AwayTeam, testData.Fixtures[i].AwayTeam);
+                Assert.IsTrue(next5FixturesForTottenham[i].Equals(testData.Fixtures[i]));
             }
 
             var premierLeagueTable = scoresFixtures.ClickTableLink();
@@ -49,6 +48,12 @@ namespace Easyjet.Test.Testcase
             }
             
             Assert.AreEqual(3, fixturesWithTeamsInBottomHalf.Count);
+        }
+
+        [TearDown]
+        public void TeardownTest()
+        {
+            _driver.Close();
         }
     }
 }
