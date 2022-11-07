@@ -28,19 +28,22 @@ namespace Easyjet.Test.Testcase
 
             var premierLeagueTable = scoresFixtures.ClickTableLink();
             var teamsInBottomHalfOfpremierLeague = premierLeagueTable.GetListOfTeamsInBottomHalf();
+            Assert.AreEqual(10, teamsInBottomHalfOfpremierLeague.Count);
 
             List<Fixture> fixturesWithTeamsInBottomHalf = new List<Fixture>();
-            foreach(var fixture in next5FixturesForTottenham)
+
+            for(int i = 0; i < next5FixturesForTottenham.Count; i++)
             {
-                foreach(var lowerHalfTeam in teamsInBottomHalfOfpremierLeague)
+                for(int j = 0; j < teamsInBottomHalfOfpremierLeague.Count; j++)
                 {
-                    if(fixture.HomeTeam == lowerHalfTeam || fixture.AwayTeam == lowerHalfTeam)
+                    if (next5FixturesForTottenham[i].HomeTeam.ToLower() == teamsInBottomHalfOfpremierLeague[j].ToLower() || next5FixturesForTottenham[i].AwayTeam.ToLower() == teamsInBottomHalfOfpremierLeague[j].ToLower())
                     {
-                        fixturesWithTeamsInBottomHalf.Add(fixture);
+                        fixturesWithTeamsInBottomHalf.Add(next5FixturesForTottenham[i]);
                     }
                 }
             }
-            Assert.AreEqual(fixturesWithTeamsInBottomHalf.Count, 3);
+
+            Assert.AreEqual(3, fixturesWithTeamsInBottomHalf.Count);
         }
     }
 }

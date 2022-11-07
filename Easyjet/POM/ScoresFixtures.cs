@@ -70,11 +70,11 @@ namespace Easyjet.POM
                 _driver.Click(fixtureMonthElement);
                 Thread.Sleep(2000);
 
-                var listOfFixtures = _driver.FindElements(By.CssSelector("span[role = 'region'] li"));
+                var listOfFixtures = _driver.FindElements(By.CssSelector("span[role = 'region'] ul>li"));
                 
                 foreach(var fixture in listOfFixtures)
                 {
-                    fixtures.Add(new Fixture() { HomeTeam = fixture.FindElement(By.XPath("article/div/span[1]/span/abbr")).GetAttribute("tittle"), AwayTeam = fixture.FindElement(By.XPath("article/div/span[3]/span/abbr")).GetAttribute("tittle") });
+                    fixtures.Add(new Fixture() { HomeTeam = fixture.FindElement(By.XPath("article/div/span[1]/span/abbr")).GetAttribute("title"), AwayTeam = fixture.FindElement(By.XPath("article/div/span[3]/span/abbr")).GetAttribute("title") });
                 }
             }
             return fixtures;

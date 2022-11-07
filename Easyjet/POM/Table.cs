@@ -24,12 +24,12 @@ namespace Easyjet.POM
             List<string> teamsInBottomHalf = new List<string>();
 
             var numberOfTeamsInTable = _driver.FindElements(By.CssSelector("table tbody>tr"));
-
-            for(int i = numberOfTeamsInTable.Count/2 + 1; i <= numberOfTeamsInTable.Count; i++)
+            
+            for (int i = (numberOfTeamsInTable.Count)/2 + 1; i <= numberOfTeamsInTable.Count; i++)
             {
-                teamsInBottomHalf.Add(_driver.FindElement(By.CssSelector($"table tbody>tr:nth-child({i}) a>span")).GetAttribute("data-900"));
-            }
-
+                teamsInBottomHalf.Add(_driver.FindElement(By.XPath($"//table/tbody/tr[{i}]//a/span[2]")).GetAttribute("innerHTML"));
+            }                           
+            
             return teamsInBottomHalf;
         }
     }
