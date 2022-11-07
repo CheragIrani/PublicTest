@@ -40,6 +40,24 @@ namespace Easyjet.Test.Testdata
                         HomeTeam = "Tottenham Hotspur",
                         AwayTeam = "Arsenal"
                     }
+                },
+                FixturesWithTeamsInBottomHalf = new List<Fixture>()
+                {
+                    new Fixture
+                    {
+                        HomeTeam = "Tottenham Hotspur",
+                        AwayTeam = "Leeds United"
+                    },
+                    new Fixture
+                    {
+                        HomeTeam = "Brentford",
+                        AwayTeam = "Tottenham Hotspur"
+                    },
+                    new Fixture
+                    {
+                        HomeTeam = "Tottenham Hotspur",
+                        AwayTeam = "Aston Villa"
+                    }
                 }
             }
         }; 

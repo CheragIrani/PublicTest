@@ -43,6 +43,11 @@ namespace Easyjet.Test.Testcase
                 }
             }
 
+            for(int i = 0; i < fixturesWithTeamsInBottomHalf.Count; i++)
+            {
+                Assert.IsTrue(fixturesWithTeamsInBottomHalf[i].Equals(testData.FixturesWithTeamsInBottomHalf[i]));
+            }
+            
             Assert.AreEqual(3, fixturesWithTeamsInBottomHalf.Count);
         }
     }

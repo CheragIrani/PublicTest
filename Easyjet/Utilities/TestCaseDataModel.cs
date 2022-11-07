@@ -9,5 +9,6 @@ namespace Easyjet.Utilities
         public string LeagueName { get; set; }
         public int NumberOfFixtures { get; set; }
         public List<Fixture> Fixtures { get; set; }
+        public List<Fixture> FixturesWithTeamsInBottomHalf { get; set; }
     }
 }
