@@ -29,14 +29,6 @@ namespace Easyjet.Helper
             }
         }
 
-        public static void VerifyPageElementsAreDisplayed(IWebDriver driver, IEnumerable<By> pageElements)
-        {
-            foreach (var pageElement in pageElements)
-            {
-                Assert.IsTrue(Element.IsElementDisplayed(driver, pageElement), $"{pageElement} is not displayed");
-            }
-        }
-
         public static bool IsElementEnabled(IWebDriver driver, By element)
         {
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
